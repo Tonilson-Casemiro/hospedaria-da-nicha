@@ -1,0 +1,920 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* configuração do cabeçalho */
+
+header {
+  height: 37rem;
+  background-image: url(imagens/pexels-photo-862848.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+}
+
+#cabecalho {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* estilização do container do span (contéudo do logo) */
+#container_logo {
+  width: 7rem;
+  height: 5rem;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  background-color: rgb(192, 129, 12);
+  position: relative;
+  animation: aumentar_escala 1.4s ease-in-out;
+}
+
+/* estilização do conteúdo do logo */
+header #container_logo span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 12pt;
+  color: white;
+}
+
+header ul li::after {
+  content: '';
+  background-color: white;
+  width: 0%;
+  height: 2px;
+  display: block;
+  transition-duration: 0.2s;
+}
+
+header ul li:hover:after {
+  width: 100%;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: white;
+  animation: aumentar_escala 1.4s ease-in-out;
+}
+
+#header_navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header_conteudo {
+  margin-top: 7rem;
+  animation: aumentar_escala 1.4s ease-in-out;
+}
+
+#conteudo1 {
+  font-size: 2rem;
+}
+#conteudo2 {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+/* estilização do icone pro scrooll no header */
+
+#header_icone_scroll {
+  margin: auto;
+  width: 40px;
+  height: 30px;
+  margin-top: 10rem;
+}
+
+
+
+ /* icone do scroll pro footer */
+ #icone-scroll-pro-footer{
+  border-radius: 50%;
+  margin: auto;
+  padding: .8rem 1rem;
+  background-color: white;
+  color: black;
+}
+
+/*  fazendo o menu hamburguer */
+
+.toggle {
+  display: none;
+
+  position: absolute;
+  top: 4rem;
+  right: 0.8rem;
+  margin: -3rem 1rem auto auto;
+}
+
+/* fazendo a animação do underline nos links no mobile */
+
+/* as 3 barras do menu hamburguer */
+#um,
+#dois,
+#tres {
+  width: 3rem;
+  height: 2px;
+  background-color: white;
+  margin-top: 0.6rem;
+  transition: 0.2s;
+  position: relative;
+  z-index: 999;
+}
+
+nav.show ul li a::after {
+  content: '';
+  background-color: black;
+  width: 0%;
+  height: 2px;
+  display: block;
+  transition-duration: 0.2s;
+}
+
+header ul li a:hover:after {
+  width: 100%;
+}
+
+/* Media para adaptação do header */
+
+@media (max-width: 1150px) {
+  header #conteudo1 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* menu hamburguer */
+  nav ul {
+    display: none;
+  }
+  .open {
+    display: block;
+  }
+
+  nav.show ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 70vw;
+    height: 100vh;
+    display: grid;
+    border-bottom: 1px solid black;
+    place-content: center;
+    gap: 3rem;
+    z-index: 999;
+  }
+
+  nav.show ul li a {
+    color: black;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  nav.show ul {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header #conteudo1 {
+    font-size: 1.6rem;
+  }
+
+  nav.show ul li {
+    text-align: center;
+  }
+
+  nav.show #dois {
+    opacity: 0;
+    transition: 0.2s;
+  }
+  nav.show #um {
+    transform: rotate(-135deg);
+    transition: 0.2s;
+    top: 0.8rem;
+    background-color: black;
+  }
+  nav.show #tres {
+    transform: rotate(135deg);
+    transition: 0.2s;
+    top: -0.7rem;
+    background-color: black;
+  }
+}
+
+@media (max-width: 320px) {
+  #um,
+  #dois,
+  #tres {
+    left: 1rem;
+    margin-top: 0.5rem;
+    width: 2rem;
+  }
+
+  #container_logo {
+    width: 4rem;
+  }
+
+  #container_logo span {
+    font-size: 10pt;
+  }
+
+  nav.show #um {
+    transition: 0.2s;
+    top: 0.6rem;
+  }
+  nav.show #tres {
+    transition: 0.2s;
+    top: -0.5rem;
+  }
+
+  nav.show ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+
+/* main */
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+
+p#paragrafo_acima {
+  text-align: center;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+  font-size: 1.5rem;
+}
+
+
+@media (max-width: 1000px) {
+  p#paragrafo_acima {
+    font-size: 1.2rem;
+  }
+  
+}
+
+
+/* Sobre Nós */
+
+#seccao-sobrenos{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+#seccao-sobrenos h2{
+  text-align: center;
+}
+
+#img-sobrenos{
+  width: 500px;
+}
+
+#container-sobrenos{
+  display: flex;
+  gap: 2rem;
+}
+
+#conteudo-sobrenos{
+  max-width: 500px;
+  box-shadow: #11111170 5px 5px 22px;
+  
+}
+
+#conteudo-sobrenos h1{
+  text-align: center;
+  padding: 1.3rem;
+}
+
+#conteudo-sobrenos p{
+  text-align: justify;
+  padding: 0rem 1.3rem 1.3rem 1.3rem;
+}
+
+/* Media query Sobre Nós */
+
+@media(max-width: 1100px){
+
+  #container-sobrenos{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+}
+
+@media(max-width: 600px){
+
+  #img-sobrenos{
+    width: 90%;
+    height: auto;
+  }
+
+  #conteudo-sobrenos{
+    margin: 0 4rem;
+    width: 90%;
+  }
+}
+
+
+/* Serviços */
+#servicos{
+  padding-top: 5rem;
+  padding-bottom: 13rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  
+}
+
+#servicos h2{
+  text-align: center;
+}
+
+#img-servicos{
+  max-width: 360px;
+  transform: translateY(20px);
+  transition: all .2s;
+}
+
+#container-servicos{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  
+}
+
+#conteudo-servicos{
+  padding: 2rem;
+  box-shadow: #11111170 5px 5px 22px;
+}
+
+#titulo-servicos{
+  max-width: 100px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+#conteudo1-servicos{
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+
+.item-servico{
+  margin-top: 1rem;
+  
+}
+
+#linha-separadora{
+  max-width: 230px;
+  height: 1px;
+  margin-top: .4rem;
+  margin-bottom: 1rem;
+  background-color: black;
+}
+
+/* Media query Serviços */
+
+@media(max-width: 850px){
+  
+  #img-facilities{
+    transform: translateY(0);
+  }
+  #container-servicos{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media(max-width:450px){
+
+  #img-servicos{
+    width: 100%;
+  }
+ 
+}
+
+
+/* Higiene */
+
+#higiene{
+  padding-top: 5rem;
+  padding-bottom: 13rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+#higiene h2{
+  text-align: center;
+}
+
+#img-higiene{
+  width: 500px;
+}
+
+#container-higiene{
+  display: flex;
+  gap: 2rem;
+}
+
+#conteudo-higiene{
+  max-width: 500px;
+  box-shadow: #11111170 5px 5px 22px;
+  padding: 1rem;
+  
+}
+#titulo-higiene{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#paragrafo-conteudo-higiene{
+  text-align: left;
+}
+
+/* MEdia query da secção Higiene */
+
+@media  (max-width: 1050px){
+
+  #container-higiene{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #img-higiene{
+    width: 400px;
+  }
+
+  #conteudo-higiene{
+    max-width: 400px;
+  }
+}
+
+@media(max-width: 500px){
+  
+  #img-higiene{
+    width: 85%;
+  }
+
+  #conteudo-higiene{
+    max-width: 85%;
+  }
+
+}
+
+/*Quartos */
+#quartos{
+  margin: auto;
+  max-width: 1000px;
+}
+
+.swiper{
+  width: 100%;
+  
+}
+
+#quartos h2{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#area-quartos{
+  margin-top: 5rem;
+  margin: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 900px;
+  
+}
+.container-quarto{
+  padding: 1rem;
+  box-shadow: #11111170 5px 5px 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 550px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+.info-quarto{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tipo-quarto{
+  font-size: 22px;
+}
+
+#linha-separadora-larga{
+  max-width: 700px;
+  height: 0.2px;
+  background-color: lightgrey;
+}
+
+.imagem-quarto{
+  max-width: 100%;
+  margin: auto;
+  
+}
+
+.sobre-quarto{
+  font-size: 20px;
+  margin-bottom: .4rem;
+}
+
+#container-lista{
+  max-width: 350px;
+  height: 250px;
+  box-shadow: #11111170 5px 5px 17px;
+  padding: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.titulo-lista{
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+ul{
+  list-style: none;
+  padding: .5rem;
+  font-size: 18px;
+}
+
+li{
+  color: rgb(99, 93, 93)
+}
+
+.linha-separadora{
+  max-width: 300px;
+  height: 0.2px;
+  background-color: lightgrey;
+  margin-top: .4rem;
+  margin-bottom: .4rem;
+}
+
+
+
+/* Responsividade dos quartos */
+@media(max-width: 1200px){
+  #area-quartos{
+      max-width:580px ;
+      flex-direction: column;
+      align-items: center;
+  }
+
+}
+
+@media(max-width: 800px){
+  #area-quartos{
+  
+      width: 80%;
+  }
+
+  .tipo-quarto{
+      font-size: 20px;
+  }
+
+  .preco-quarto{
+      font-size: 15px;;
+  }
+
+  .info-sobre-quarto{
+      font-size: 15px;
+  }
+
+  .sobre-quarto{
+      font-size: 19px;
+  }
+
+  .titulo-lista{
+      font-size: 18px;
+  }
+
+  #quartos ul li{
+      font-size: 15px;
+  }
+}
+
+@media(max-width: 590px){
+  #area-quartos{
+      width: 75%;
+  }
+}
+
+
+
+
+
+
+/*contactos */
+
+#contactos {
+  margin-top: 6rem;
+  margin-bottom: 10rem;
+}
+
+#contactos h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: auto;
+  margin-bottom: 5rem;
+  width: 180px;
+}
+
+#contactos h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: lightgrey;
+  transition: 1s;
+}
+
+#contactos > div {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+#item_contactos_endereco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: #11111170 5px 5px 18px;
+  text-align: center;
+  line-height: 1.7rem;
+  width: 500px;
+  height: 150px;
+  font-size: 1.1rem;
+  transition: all 0.4s;
+}
+
+#item_contactos_email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: #11111170 5px 5px 18px;
+
+  text-align: center;
+  line-height: 1.7rem;
+  width: 300px;
+  height: 150px;
+  font-size: 1.1rem;
+}
+
+#item_contactos_numeros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow: #11111170 5px 5px 18px;
+  text-align: center;
+  line-height: 1.7rem;
+  width: 300px;
+  height: 230px;
+  font-size: 1.1rem;
+}
+
+.textinhos {
+  font-size: 13px;
+}
+
+.animacao_mexer:hover {
+  animation: tremer 0.3s ease-in-out;
+}
+
+/* Animação de mexer o container dos contactos */
+@keyframes tremer {
+  0% {
+    transform: rotate(3deg);
+  }
+  20% {
+    transform: rotate(-3deg);
+  }
+  40% {
+    transform: rotate(3deg);
+  }
+  60% {
+    transform: rotate(-3deg);  
+  }
+  80% {
+    transform: rotate(3deg);
+  }
+  90% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(3deg);
+  }
+}
+/* media query dos contactos */
+
+@media (max-width: 1020px) {
+  .textinhos {
+    font-size: 10pt;
+  }
+
+  #item_contactos_endereco {
+    width: 350px;
+  }
+
+  #item_contactos_email {
+    width: 200px;
+  }
+
+  #item_contactos_numeros {
+    width: 200px;
+  }
+}
+
+@media (max-width: 375px) {
+  #item_contactos_endereco {
+    width: 280px;
+  }
+
+  #item_contactos_email {
+    width: 200px;
+  }
+
+  #item_contactos_numeros {
+    width: 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  #contactos > div {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* footer */
+
+footer {
+  background-color: rgb(16, 16, 26);
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer div#footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem;
+}
+
+footer p {
+  font-size: 1rem;
+  margin-bottom: .6rem;
+  text-align: center;
+}
+
+#nome_hospedaria_do_footer {
+  display: flex;
+  flex-direction: column;
+  color: rgb(192, 129, 12);
+}
+
+#nome_hospedaria_do_footer span {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+#palavra_hospedaria {
+  margin-bottom: 10px;
+}
+
+.conteudoFooter_pequeno {
+  font-size: 0.9rem;
+}
+#palavra_hospedaria {
+  text-indent: 10px;
+}
+
+footer param:hover {
+  color: rgb(192, 129, 12);
+}
+footer a:hover {
+  color: rgb(192, 129, 12);
+}
+
+/* conteudo 2 no footer */
+
+#footer_c2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+/* conteudo 3 no footer (redes sociais) */
+
+#footer_c3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+#input_email {
+  margin-top: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: rgb(42, 42, 58);
+  border: 2.5px solid rgb(192, 129, 12);
+  transform: translatex(4.8px);
+  width: 75%;
+  padding-left: 0.5rem;
+  color: white;
+}
+
+#input_email:focus {
+  outline: 1px solid rgb(192, 129, 12);
+}
+
+#input_submit {
+  border: none;
+  background-color: rgb(192, 129, 12);
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  width: 20%;
+}
+
+/* Medis query do footer */
+
+@media (max-width: 865px) {
+  footer div#footer {
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #footer .footerConteudo {
+    width: 200px;
+    margin: auto;
+  }
+
+  #footer span {
+    font-size: 1rem;
+  }
+  #nome_da_hospedaria_do_footer span {
+    font-size: 1.2rem;
+  }
+
+  /*#input_email {
+    width: 25%;
+  }
+  #input_submit {
+    width: 8%;
+  }*/
+}
+@media (max-width: 375px) {
+  #nome_da_hospedaria_do_footer span {
+    font-size: 1rem;
+  }
+  #footer span {
+    font-size: 0.8rem;
+  }
+}
