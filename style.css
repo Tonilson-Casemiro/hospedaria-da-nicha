@@ -280,6 +280,26 @@ p#paragrafo_acima {
 }
 
 
+/* Botao que scrolla pro topo*/
+#to-top{
+  background-color: rgb(192, 129, 12);
+  font-size: 25px;
+  padding: .5rem;
+  position: fixed;
+  bottom: 4rem;
+  right: 1rem;
+  
+}
+
+#link-botao-top{
+  text-decoration: none;
+  color: black;
+  display: none;
+  transition: all .3s;
+  z-index: 1000;
+}
+
+
 /* Sobre Nós */
 
 #seccao-sobrenos{
