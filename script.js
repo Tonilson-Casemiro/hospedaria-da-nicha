@@ -41,7 +41,18 @@ sr.reveal('.scrollxyz',{
 })
 
 
-// Links internos
 
+//display do botao durante o scroll (link pro topo)
+const botaoTop = document.querySelector('a.link-botao-top')
+console.log(botaoTop)
+function aparecerbotao(){
+ if(window.scrollY > 200){
+   botaoTop.classList.add('aparecer-botao-to-top');
+ }else{
+   botaoTop.classList.remove('aparecer-botao-to-top');
+ }
+}
+
+window.addEventListener('scroll', aparecerbotao)
 
 

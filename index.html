@@ -65,7 +65,7 @@
 
     <!-- botão pro topo do site -->
   
-    <a href="#cabecalho" id="link-botao-top"><i class="fa-solid fa-arrow-up" id="to-top"></i></a>
+    <a href="#cabecalho" class="link-botao-top" ><i class="fa-solid fa-arrow-up" id="icone-to-top"></i></a>
 
 <!--Area do Facilities (informação da hospedaria)-->
   
@@ -304,6 +304,59 @@
 
     </section>
 
+    <!-- Google maps-->
+    <div id="container-mapa" class="scrollxyz">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.4296579128873!2d13.158341814339655!3d-8.932495094222148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a518ab843aacbb9%3A0xc6f62ebb9adf72a1!2sHospedaria%20Praia%20Da%20Nicha!5e0!3m2!1spt-BR!2sao!4v1651059749336!5m2!1spt-BR!2sao" width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+
+    <!-- Secção para o envio de mensagem -->
+
+    <section id="fale-conosco" class="scrollxyz">
+      <h2 class="titulo-seccao scrollTexto">Fale - Conosco</h2>
+
+      <div id="container-formulario-contacte-nos">
+        <p>Preencha os formularios para contactar-nos</p>
+
+        <form action="https://formsubmit.co/casimirotonilson1@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://127.0.0.1:5500/emailEnviado.html">
+          <div id="container-inputs-nome">
+            <div>
+              <label for="primeiro-nome">Primeiro nome</label>
+              <input type="text" name="name" id="primeiro-nome"  required>
+            </div>
+
+            <div>
+              <label for="segundo-nome">Segundo nome</label>
+              <input type="text" name="name" id="segundo-nome" max="12" required>
+            </div>
+          </div>
+
+          <div id="container-inputs-email-tel">
+            <div>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required>
+            </div>
+  
+            <div>
+              <label for="telefone">Telefone</label>
+              <input type="number" name="telefone" id="telefone" required>
+            </div>
+          </div>
+          
+          <div id="container-text-area">
+            <label for="mensagem">Escreva a sua mensagem</label>
+            <textarea name="" id="mensagem" cols="30" rows="2"></textarea>
+          </div>
+
+          <div id="container-input-submit-enviar">
+            <button type="submit" id="input-submit-enviar" value="enviar">Enviar</button>
+          </div>
+          
+        </form>
+      </div>
+
+    </section>
     
 
   </main>
@@ -319,6 +372,7 @@
           <p class="conteudoFooter_pequeno">+44 345 678 903<p>
           <p class="conteudoFooter_pequeno">hospedariapraiadanicha@gmail.com</p>
         </p>
+        <p id="cop-tonilson">copyright&#169; Tonilson Casemiro</p>
       </div>
       <div class="footerConteudo" id=" footer_conteudo2">
         <p id="footer_c2">
@@ -333,6 +387,7 @@
             <p><a href="https://www.facebook.com/Hospedaria-PRAIA-DA-NICHA-106538231194600/" target="_blank" rel="external"><i class="fa-brands fa-facebook-f"></i> Facebook</a></p>
             
             <p><a href="https://www.instagram.com/explore/locations/531901032/praia-da-nicha-benfica-luanda-angola/" target="_blank" rel="external"><i class="fa-brands fa-instagram"></i> Instagram</a></p>
+
           </div>
         </div>
       </div>

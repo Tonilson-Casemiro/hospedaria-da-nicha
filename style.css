@@ -281,22 +281,29 @@ p#paragrafo_acima {
 
 
 /* Botao que scrolla pro topo*/
-#to-top{
+#icone-to-top{
   background-color: rgb(192, 129, 12);
-  font-size: 25px;
+  font-size: 18px;
   padding: .5rem;
-  position: fixed;
-  bottom: 4rem;
-  right: 1rem;
+  
   
 }
 
-#link-botao-top{
+.link-botao-top{
+  position: fixed;
+  bottom: 4rem;
+  right: 1rem;
   text-decoration: none;
   color: black;
-  display: none;
   transition: all .3s;
   z-index: 1000;
+  visibility: hidden;
+  transform: translatey(100%);
+}
+
+.aparecer-botao-to-top{
+  visibility: visible;
+  transform: translatey(0);
 }
 
 
@@ -811,6 +818,193 @@ li{
   }
 }
 
+
+/* google-maps*/
+
+#container-mapa{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+/* fale-conosco */
+#fale-conosco{
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#fale-conosco h2{
+  margin-bottom: 2rem;
+}
+#fale-conosco p{
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#container-formulario-contacte-nos{
+  box-shadow: #11111170 5px 5px 18px;
+  padding: 2rem;
+}
+
+#fale-conosco form{
+  padding: .2rem;
+}
+
+#fale-conosco label{
+  display: block;
+  margin-bottom: .3rem;
+}
+#fale-conosco #container-inputs-nome{
+  display: flex;
+  gap: 3rem;
+  margin-bottom: .5rem;
+  justify-content: space-around;
+  padding: .4rem;
+}
+
+#fale-conosco #container-inputs-email-tel{
+  display: flex;
+  gap: 3rem;
+  margin-bottom: .5rem;
+  padding: .4rem;
+  justify-content: space-around;
+}
+#fale-conosco input{
+  border: none;
+  border-bottom: 1px solid rgb(192, 129, 12);
+  transition: all .2s;
+  outline: none;
+  width: 280px;
+  margin-left: .3rem;
+}
+
+#fale-conosco input:focus{
+  border-bottom: 1px solid orange;
+}
+
+
+
+#fale-conosco #container-text-area{
+  margin: auto;
+}
+
+#fale-conosco textarea{
+  padding: .4rem;
+  resize: none;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+#fale-conosco textarea{
+  border: 1px solid rgb(192, 129, 12);
+}
+
+#fale-conosco textarea:focus{
+  border: 1px solid orange;
+}
+
+#input-submit-enviar{
+  text-align: center;
+  padding: 1rem 2.5rem;
+  border: none;
+  color: white;
+  background-color: orange;
+}
+
+/* adptação da sessão fale-conosco*/
+
+@media (max-width: 964px){
+
+  #fale-conosco #container-inputs-nome{
+    gap: 1rem;
+  }
+
+  #fale-conosco #container-inputs-email-tel{
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 800px){
+  #container-formulario-contacte-nos{
+   width: 90%;
+  }
+
+  #fale-conosco #container-inputs-nome{
+    gap: .3rem;
+  }
+
+  #fale-conosco #container-inputs-email-tel{
+    gap: .3rem;
+  }
+
+  #fale-conosco input{
+    width: 240px;
+  }
+}
+
+@media (max-width:700px ){
+  #container-formulario-contacte-nos{
+    width: 70%;
+   }
+
+   #fale-conosco #container-inputs-nome{
+    gap: .6rem;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  #fale-conosco #container-inputs-email-tel{
+    gap: .6rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #fale-conosco #container-text-area{
+    display: flex;
+    flex-direction: column; 
+    margin-top: 1rem;
+  }
+
+  #container-input-submit-enviar{
+   margin: auto;
+  }
+
+}
+
+@media (max-width: 500px){
+  #container-formulario-contacte-nos{
+    width: 340px;
+   }
+
+   #fale-conosco label{
+     font-size: 14px;
+   }
+
+
+}
+
+@media (max-width: 380px){
+  #container-formulario-contacte-nos{
+    width: 90%
+   }
+
+   #fale-conosco input{
+    width: 100%;
+   }
+
+}
+
+
+
+
+
 /* footer */
 
 footer {
@@ -902,6 +1096,10 @@ footer a:hover {
   width: 20%;
 }
 
+#cop-tonilson{
+  font-size: 12px;
+  color:rgb(192, 129, 12);
+}
 /* Medis query do footer */
 
 @media (max-width: 865px) {
